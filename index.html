@@ -20,17 +20,15 @@
         <img src="images/logo.png" />
         <div class="select-box">
           <label for="filterSelect">Scegli un genere</label>
-          <select name="" id="filterSelect">
-            <option>All</option>
-            <option>Pop</option>
-            <option>Pop</option>
+          <select v-model="genSelect" name="genresSelect" @change="filterByGenres" id="filterSelect">
+            <option v-for="genre in gensArray" selected :value="genre">{{ genre }}</option>
           </select>
         </div>
       </div>
     </header>
     <main class="container">
       <section id="album-container">
-        <div v-for="(album,index) in albums" class="card">
+        <div v-for="(album,index) in filterByGenres()" class="card">
           <img :src="album.poster" alt="New Jersey" />
           <h2 class="title">{{album.title}}</h2>
           <address class="author">{{album.author}}</address>
