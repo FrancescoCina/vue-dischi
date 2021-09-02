@@ -73,3 +73,15 @@ header img {
 #album-container .card .year {
   font-size: 16px;
 }
+
+.flex{
+  display:flex;
+  justify-content:space-between
+}
+
+.select-box{
+  margin:15px;
+}
+.select-box label{
+   color:#fff;
+}

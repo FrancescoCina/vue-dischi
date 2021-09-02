@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Document</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <div class="container">
-          <img src="images/logo.png" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Link Vue Js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- Link Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="container flex">
+        <img src="images/logo.png" />
+        <div class="select-box">
+          <label for="filterSelect">Scegli un genere</label>
+          <select name="" id="filterSelect">
+            <option>All</option>
+            <option>Pop</option>
+            <option>Pop</option>
+          </select>
         </div>
-      </header>
-      <main class="container">
-        <section id="album-container">
-          <div class="card">
-            <img src="images/demo.jpg" alt="New Jersey" />
-            <h2 class="title">NEW JERSEY</h2>
-            <address class="author">Bon Jovi</address>
-            <time datetime="1988" class="year">1988</time>
-          </div>
-        </section>
-      </main>
-    </div>
+      </div>
+    </header>
+    <main class="container">
+      <section id="album-container">
+        <div v-for="(album,index) in albums" class="card">
+          <img :src="album.poster" alt="New Jersey" />
+          <h2 class="title">{{album.title}}</h2>
+          <address class="author">{{album.author}}</address>
+          <time datetime="1988" class="year">{{album.year}}</time>
+        </div>
+      </section>
+    </main>
+  </div>
 
 
-    <select name="" id="">
-      <option>All</option>
-      <option>Pop</option>
-      <option>Pop</option>
-    </select>
 
 
-    <script src="js/script.js"></script>
-  </body>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
