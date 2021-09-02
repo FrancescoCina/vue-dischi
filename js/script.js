@@ -35,7 +35,6 @@ const app = new Vue({
     filterByGenres() {
       if (this.genSelect === "all") {
         return this.filteredAlbums = this.albumsSortByYear;
-
       }
       this.filteredAlbums = this.albumsSortByYear.filter((album) => {
         return album.genre === this.genSelect;
